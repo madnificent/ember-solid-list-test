@@ -1,7 +1,8 @@
 {{page-title "SolidListTest"}}
 
-{{!-- The following component displays Ember's default welcome message. --}}
-<WelcomePage />
-{{!-- Feel free to remove this! --}}
+<ul>
+  <li><LinkTo @route="login">Login</LinkTo> </li>
+  <li><LinkTo @route="todo-list-scenario">Scenario</LinkTo> </li>
+</ul>
 
 {{outlet}}

@@ -1,0 +1,30 @@
+{{page-title "TodoListScenario"}}
+
+<button role="button" type="button" {{on "click" this.importFromStore}}>import from pod</button>
+<button role="button" type="button" {{on "click" this.saveToPod}}>save to pod</button>
+<button role="button" type="button" {{on "click" this.makeTaskList}}>create task list</button>
+<button role="button" type="button" {{on "click" this.updateSerializedData}}>update ttl view</button>
+<button role="button" type="button" {{on "click" this.addTask}}>addTask</button>
+<button role="button" type="button" {{on "click" this.ttlParts}}>serialize merged ttl</button>
+
+<h1>{{this.taskList.title}}</h1>
+
+<ul>
+  {{#each this.taskList.todos as |todo|}}
+    <li>{{todo.title}}</li>
+  {{/each}}
+</ul>
+
+{{#if this.serializedData}}
+  <QuadsTable @quads={{this.serializedData}} />
+{{/if}}
+
+{{#if this.ttl}}
+  <h1>TTLs</h1>
+  <h2>graph</h2>
+  <QuadsTable @quads={{this.ttl.graph}} />
+  <h2>additions</h2>
+  <QuadsTable @quads={{this.ttl.additions}} />
+  <h2>removals</h2>
+  <QuadsTable @quads={{this.ttl.removals}} />
+{{/if}}

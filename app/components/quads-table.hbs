@@ -1,0 +1,17 @@
+<table>
+  <thead>
+    <tr>
+      <th>Subject</th><th>Predicate</th><th>Object</th><th>Graph</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each @quads as |quad|}}
+      <tr>
+        <td>{{quad.subject.value}}</td>
+        <td>{{quad.predicate.value}}</td>
+        <td>{{quad.object.value}}</td>
+        <td>{{quad.graph.value}}</td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
