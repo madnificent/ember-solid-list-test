@@ -8,6 +8,7 @@ export default class TodoListScenarioRoute extends Route {
   async model() {
     await this.solidAuth.ensureLogin();
     await this.store.fetchGraphForType('todo-list');
+    this.store.all('todo-list');
     return this.store.peekInstance(
       'todo-list',
       'http://mu.semte.ch/vocabularies/ext/tests/todo-list-1'

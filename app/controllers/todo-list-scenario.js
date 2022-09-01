@@ -23,6 +23,7 @@ export default class TodoListScenarioController extends Controller {
   @action
   makeTaskList() {
     this.taskList = this.store.create('todo-list', {
+      uri: 'http://mu.semte.ch/vocabularies/ext/tests/todo-list-1',
       title: 'My best todo list',
     });
   }
